@@ -18,7 +18,18 @@ int main(void)
 	srand(time(0));
 	n = rand() % 100; /*  Generate a random number between 0 and 99 */
 
-	m = n % 10;
+	if (n < 0)
+
+	{
+		m = -n % 10;
+		n = -n;
+	}
+	else
+	{
+		m = n % 10;
+	}
+
+
 	if (m > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, m);
 	else if (m == 0)
